@@ -3,15 +3,15 @@ use App\Core\Routing\Route;
 
 Route::get('/null');
 
-Route::add(['get'], '/' , function(){
+Route::add(['get' ,'post','put'], '/a' , function(){
     echo 'Welcome';
 });
 
-Route::post('/saveForm' , function(){
+Route::post('/b' , function(){
     echo 'save Ok';
 });
 
-Route::put('/puturi' ,['Controller' , 'Method']);
-Route::put('/puturi' ,'Controller@Method');
+Route::put('/c' ,['Controller' , 'Method']);
+Route::put('/d' ,'Controller@Method');
 
 
