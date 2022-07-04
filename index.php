@@ -1,12 +1,8 @@
 <?php
 #Front Controller
-use App\Core\StupidRouter;
+use App\Core\Routing\Route;
 
 include 'bootstrap/init.php';
 
-// $router= new StupidRouter();
-// $router->run();
-
-// $request = new \App\Core\Request();
-// $request->redirect('colors/red');
+var_dump(Route::routes());
 
