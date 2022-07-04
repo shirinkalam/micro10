@@ -7,6 +7,7 @@
     <title>404: Not Found</title>
 </head>
 <body>
-    <h2 style="text-align:center;">PAGE NOT FOUND !</h2> 
+    <h2 style="text-align:center;">404<br>
+    PAGE NOT FOUND !</h2> 
 </body>
 </html>

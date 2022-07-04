@@ -1,13 +1,13 @@
 <?php
 use App\Core\Routing\Route;
 
-Route::get('/null');
+Route::get('/' , 'HomeController@index');
 
 Route::add(['get' ,'post','put'], '/a' , function(){
     echo 'Welcome';
 });
 
-Route::post('/b' , function(){
+Route::get('/b' , function(){
     echo 'save Ok';
 });
 
