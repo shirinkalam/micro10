@@ -13,7 +13,7 @@ class Router
     {
         $this->request= new Request();
         $this->routes= Route::routes();
-        $this->current_route= $this->findRoute($this->request) ?? null;
+        $this->current_route = $this->findRoute($this->request) ?? null;
         // var_dump($this->current_route);
     }
 
