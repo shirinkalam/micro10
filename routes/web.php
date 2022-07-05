@@ -1,9 +1,10 @@
 <?php
 use App\Core\Routing\Route;
+use App\Middleware\BlockFirefox;
 
 Route::get('/' , 'HomeController@index');
 
-Route::get('/todo/list' , 'TodoController@list');
+Route::get('/todo/list' , 'TodoController@list',[BlockFirefox::class,BlockIE::class]);
 
 Route::get('/archive' , 'ArchiveController@index');
 Route::get('/archive/articles' , 'ArchiveController@articles');
@@ -19,5 +20,3 @@ Route::get('/b' , function(){
 
 Route::put('/c' ,['Controller' , 'Method']);
 Route::put('/d' ,'Controller@Method');
-
-
