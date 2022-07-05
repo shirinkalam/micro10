@@ -8,7 +8,8 @@ function asset_url($route){
     return site_url('assets/' . $route);
 }
 
-function view($path){ #error 404
+function view($path, $data=[]){ #error 404
+    extract($data);
     $path = str_replace('.','/',$path);
     $viewFullPath = BASEPATH . "views/$path.php";
     include_once $viewFullPath;
