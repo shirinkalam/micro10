@@ -14,12 +14,21 @@ class Router
         $this->request= new Request();
         $this->routes= Route::routes();
         $this->current_route = $this->findRoute($this->request) ?? null;
-        // var_dump($this->current_route);
+        #RUN MIDDLEWARE HERE
+        $this->run_route_middleware();
+    }   
+
+    private function run_route_middleware(){
+        $middleware = $this->current_route['middleware'];
+        foreach($middleware as $middleware_class){
+            $middleware_obj = new $middleware_class;
+            $middleware_obj->handle();
+        }
     }
 
     public function findRoute(Request $request)
     {
-        // echo $request->method(). " " .$request->uri();
+
         foreach($this->routes as $route){
             if(in_array($request->method(),$route['methods']) and $request->uri() == $route['uri']){
                 return $route;

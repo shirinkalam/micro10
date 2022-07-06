@@ -1,13 +1,14 @@
 <?php
 namespace App\Middleware;
 use App\Middleware\Contract\MiddlewareInterface;
+use hisorange\BrowserDetect\Parser as Browser;
 
 class   BlockIE implements MiddlewareInterface
 {
     public function handle()
     {
-        global $request;
-        var_dump($request);
-        die("BlockIE");
+        if(Browser::IsIE()){
+            die('IE Blocked');
+        }
     }
 }
