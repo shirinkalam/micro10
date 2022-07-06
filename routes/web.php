@@ -21,3 +21,6 @@ Route::get('/b' , function(){
 
 Route::put('/c' ,['Controller' , 'Method']);
 Route::put('/d' ,'Controller@Method');
+
+Route::get('/post/{slug}' ,'PostController@single');
+
