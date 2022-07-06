@@ -3,9 +3,14 @@ use App\Core\Routing\Route;
 use App\Middleware\BlockFirefox;
 use App\Middleware\BlockIE;
 
-Route::get('/' , 'HomeController@index');
 
 Route::get('/todo/list' , 'TodoController@list',[BlockFirefox::class,BlockIE::class]);
+Route::get('/post/{slug}' ,'PostController@single');
+Route::get('/post/{slug}/comment/{cid}' ,'PostController@comment');
+
+
+
+Route::get('/' , 'HomeController@index');
 
 Route::get('/archive' , 'ArchiveController@index');
 Route::get('/archive/articles' , 'ArchiveController@articles');
@@ -22,5 +27,4 @@ Route::get('/b' , function(){
 Route::put('/c' ,['Controller' , 'Method']);
 Route::put('/d' ,'Controller@Method');
 
-Route::get('/post/{slug}' ,'PostController@single');
 

@@ -5,6 +5,16 @@ class PostController
 {
     public function single()
     {
-        nice_dd($_GET);
+        global $request;
+        $slug = $request->get_route_param('slug');
+        echo "slug : $slug<br>";
+    }
+
+    public function comment()
+    {
+        global $request;
+        $slug = $request->get_route_param('slug');
+        $cid = $request->get_route_param('cid');
+        echo "slug : $slug<br>comment : $cid";
     }
 }

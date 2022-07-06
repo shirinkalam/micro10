@@ -30,11 +30,37 @@ class Router
     {
 
         foreach($this->routes as $route){
-            if(in_array($request->method(),$route['methods']) and $request->uri() == $route['uri']){
+            
+            if(!in_array($request->method(),$route['methods'])){
+                return false;
+            }
+
+            if($this->regex_matched($route)){
                 return $route;
             }
         }
+
         return null;   
+    
+    }
+
+    public function regex_matched($route){
+
+        global $request;
+
+         $pattern="/^". str_replace(['/','{','}'] , ['\/','(?<','>[-%\w]+)'],$route['uri']) ."$/";
+         $result = preg_match($pattern,$this->request->uri(),$matchs);
+
+         if(!$result){
+            return false;
+         }
+         foreach($matchs as $key=>$value){
+             if(!is_int($key)){
+                $request->add_route_param($key,$value);
+             }
+         }
+
+         return true;
     }
 
     public function dispatch404(){
