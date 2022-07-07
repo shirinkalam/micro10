@@ -7,7 +7,7 @@ interface CRUDInterface{
     public function create(array $data) : int;
 
     #Read(SELECT : single OR multiple)
-    public function read($id) : object;
+    public function find($id) : object;
     public function get(array $columns,array $where) : array;
     
     #Update(UPDATE)

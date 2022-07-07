@@ -3,7 +3,7 @@ namespace App\Models;
 
 use App\Models\Contracts\JsonBaseModel; 
 
-class  User extends JsonBaseModel{
-    protected $table  = 'users';
+class Comment extends JsonBaseModel{
+    protected $table  = 'comments';
 
 }
