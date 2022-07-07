@@ -20,11 +20,13 @@ include 'bootstrap/init.php';
 // $router = new \App\Core\Routing\Router();
 // $router->run();
 
-$productModel = new Product();
+// $productModel = new Product();
 
-for($i = 1 ; $i<20 ; $i ++){
-    $productModel->create([
-        'id' => $i,
-        'title' =>"product-$i"
-    ]);
-}
+// for($i = 1 ; $i<20 ; $i ++){
+//     $productModel->create([
+//         'id' => $i,
+//         'title' =>"product-$i"
+//     ]);
+// }
+
+
