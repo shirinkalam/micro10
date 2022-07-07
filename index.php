@@ -1,21 +1,22 @@
 <?php
 #Front Controller
-use App\Core\Routing\Route;
-use App\Core\Routing\Router;
+// use App\Core\Routing\Route;
+// use App\Core\Routing\Router;
 use App\Models\User;
-use App\Models\Product;
+// use App\Models\Product;
 
 include 'bootstrap/init.php';
 
-// $user_data=[
-//     "id" => rand(5,1000),
-//     "name" =>"nima"
-// ];
+$user_data=[
+    'name' =>"hadi",
+    'email' =>"hadi@gmail.com",
+    'password' =>"123456"
+];
 
-// $userModel = new User();
-// // $userMode->create($user_data);
+$userModel = new User();
+$result = $userModel->create($user_data);
 // $user = $userModel->getAll();
-// nice_dump($user);
+var_dump($result);
 
 // $router = new \App\Core\Routing\Router();
 // $router->run();
