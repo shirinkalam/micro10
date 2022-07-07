@@ -1,9 +1,8 @@
 <?php
 namespace App\Models;
+use App\Models\Contracts\MysqlBaseModel; 
 
-use App\Models\Contracts\JsonBaseModel; 
-
-class  Product extends JsonBaseModel{
+class  Product extends MysqlBaseModel{
     protected $table  = 'products';
 
 }

@@ -1,9 +1,8 @@
 <?php
 namespace App\Models;
+use App\Models\Contracts\MysqlBaseModel; 
 
-use App\Models\Contracts\JsonBaseModel; 
-
-class Comment extends JsonBaseModel{
-    protected $table  = 'comments';
+class  Comment extends MysqlBaseModel{
+    protected $table  = 'Comments';
 
 }

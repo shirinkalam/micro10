@@ -3,31 +3,20 @@
 // use App\Core\Routing\Route;
 // use App\Core\Routing\Router;
 use App\Models\User;
-// use App\Models\Product;
+use App\Models\Product;
 
 include 'bootstrap/init.php';
 
-$user_data=[
-    'name' =>"hadi",
-    'email' =>"hadi@gmail.com",
-    'password' =>"123456"
-];
 
-$userModel = new User();
-$result = $userModel->create($user_data);
-// $user = $userModel->getAll();
-var_dump($result);
+$productModel = new Product();
+
+// for($i =1 ;$i<=7;$i++){
+//     $productModel->create([
+//         'title' =>"Product-$i",
+//         'price' =>rand(1,100)*1000
+//     ]);
+// }
+// $result = $userModel->delete(['name'=>'mahdi'],['id'=>1]);
 
 // $router = new \App\Core\Routing\Router();
 // $router->run();
-
-// $productModel = new Product();
-
-// for($i = 1 ; $i<20 ; $i ++){
-//     $productModel->create([
-//         'id' => $i,
-//         'title' =>"product-$i"
-//     ]);
-// }
-
-
