@@ -13,11 +13,18 @@ abstract class BaseModel implements CRUDInterface{
     //     #if MYSQL = set mysql connection
     // }
 
-    protected function getAttributes($key){
-        if(!$key or array_key_exists($key , $this->attributes)){
+    public function getAttribute($key){
+        if(!$key || !array_key_exists($key , $this->attributes)){
             return null;
         }
         return $this->attributes[$key];
     }
 
+    public function getAttributes(){
+        return $this->attributes;
+    }
+
+    public function __get($key){
+        return $this->getAttribute($key);
+    }
 }

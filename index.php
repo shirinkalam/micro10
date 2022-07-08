@@ -8,7 +8,7 @@ use App\Models\Product;
 include 'bootstrap/init.php';
 
 
-$productModel = new Product();
+// $productModel = new Product();
 
 // for($i =1 ;$i<=7;$i++){
 //     $productModel->create([
@@ -18,5 +18,5 @@ $productModel = new Product();
 // }
 // $result = $userModel->delete(['name'=>'mahdi'],['id'=>1]);
 
-// $router = new \App\Core\Routing\Router();
-// $router->run();
+$router = new \App\Core\Routing\Router();
+$router->run();

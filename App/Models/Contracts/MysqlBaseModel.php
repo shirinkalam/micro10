@@ -4,7 +4,7 @@ use Medoo\Medoo;
 
 class MysqlBaseModel extends BaseModel{
     
-    public function __construct(){
+    public function __construct($id = null){
         #if MYSQL = set mysql connection
         try{
             // $this->connection =new \PDO("mysql:dbname={$_ENV['DB_NAME']};host{$_ENV['DB_HOST']}",$_ENV['DB_USER'],$_ENV['DB_PASS']);
@@ -44,6 +44,8 @@ class MysqlBaseModel extends BaseModel{
         }catch(PDOException $e){
             echo "Connection Faild".$e->getMessage();
         }
+        if(!is_null($id))
+            return $this->find($id);
     }
 
         #Create(INSERT)
@@ -57,7 +59,12 @@ class MysqlBaseModel extends BaseModel{
         public function find($id) : object
         {
             $record= $this->connection->get($this->table,'*',[$this->primaryKey =>$id]);
-            return (object)$record;
+            
+            foreach($record as $col=>$val){
+                $this->attributes[$col]=$val;
+            }
+
+            return $this;
         }
         
         public function getAll() : array
