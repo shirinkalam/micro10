@@ -11,8 +11,11 @@ class PostController
         $author_id = 2;
 
 
-        $user =new User(2);
-        nice_dump($user->name);
+        $user =new User(4);
+        // $result =$user->remove();
+        $user->name ='ali';
+        $user->save();
+        nice_dump($user->getAttributes());
 
 
         $slug = $request->get_route_param('slug');
